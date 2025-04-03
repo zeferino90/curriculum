@@ -19,12 +19,12 @@ jobs:
 
       - name: Convert Markdown to PDF
         run: |
-          pandoc cv/cv.md -o cv/cv.pdf --pdf-engine=xelatex -V geometry:margin=1in
+          pandoc cv.md -o cv.pdf --pdf-engine=xelatex -V geometry:margin=1in
 
       - name: Commit and push PDF
         run: |
           git config --global user.name 'github-actions'
           git config --global user.email 'github-actions@github.com'
-          git add cv/cv.pdf
+          git add cv.pdf
           git commit -m 'Automated PDF update' || echo "No changes to commit"
           git push
