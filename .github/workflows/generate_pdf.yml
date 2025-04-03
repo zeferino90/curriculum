@@ -21,10 +21,16 @@ jobs:
         run: |
           pandoc cv.md -o cv.pdf --pdf-engine=xelatex -V geometry:margin=1in
 
-      - name: Commit and push PDF
+      - name: Set up Git user
         run: |
-          git config --global user.name 'github-actions'
-          git config --global user.email 'github-actions@github.com'
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+        
+      - name: Push changes
+        env:
+          GH_PAT: ${{ secrets.GH_Personal_Access_Token }}
+        run: |
+          git remote set-url origin https://$GH_PAT@github.com/zeferino90/curriculum.git
           git add cv.pdf
-          git commit -m 'Automated PDF update' || echo "No changes to commit"
-          git push
+          git commit -m "Automated PDF update"
+          git push origin main
