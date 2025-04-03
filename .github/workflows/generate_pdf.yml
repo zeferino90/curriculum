@@ -23,8 +23,8 @@ jobs:
 
       - name: Set up Git user
         run: |
-          git config --global user.name "github-actions"
-          git config --global user.email "github-actions@github.com"
+          git config --global user.name "Moisés Pérez Espinosa"
+          git config --global user.email "moises.perez.esp@gmail.com"
         
       - name: Push changes
         env:
