@@ -22,14 +22,13 @@ jobs:
 
       - name: Set up Git user
         run: |
-          git config --global user.name "Moisés Pérez Espinosa"
-          git config --global user.email "moises.perez.esp@gmail.com"
+          git config --global user.name "${{ github.actor }}"
+          git config --global user.email "${{ github.actor }}@users.noreply.github.com"
         
       - name: Push changes
         env:
           GH_PAT: ${{ secrets.GH_Personal_Access_Token }}
         run: |
-          git remote set-url origin https://$GH_PAT@github.com/zeferino90/curriculum.git
           git add cv.pdf
-          git commit -m "Automated PDF update"
-          git push origin main
+          git commit -m "Automated PDF update on $(date -u +"%Y-%m-%d %H:%M:%S UTC")"
+          git push --quiet origin ${{ github.ref_name }}
