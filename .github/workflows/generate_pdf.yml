@@ -4,31 +4,44 @@ on:
   push:
     branches:
       - main
+    paths:
+      - 'cv.md'
   workflow_dispatch:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
 
     steps:
-      - uses: actions/checkout@v4
-      
-      - name: Install Pandoc
-        run: sudo apt-get install -y pandoc texlive-xetex
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683  # v4.2.2
+
+      - name: Cache apt packages
+        uses: actions/cache@v4
+        with:
+          path: /var/cache/apt/archives
+          key: apt-${{ runner.os }}-pandoc-texlive-xetex
+
+      - name: Install Pandoc and XeLaTeX
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y pandoc texlive-xetex
 
       - name: Convert Markdown to PDF
-        run: |
-          pandoc cv.md -o cv.pdf --pdf-engine=xelatex -V geometry:margin=1in
+        run: pandoc cv.md -o cv.pdf --pdf-engine=xelatex -V geometry:margin=1in
 
       - name: Set up Git user
         run: |
           git config --global user.name "${{ github.actor }}"
           git config --global user.email "${{ github.actor }}@users.noreply.github.com"
-        
+
       - name: Push changes
         env:
           GH_PAT: ${{ secrets.GH_Personal_Access_Token }}
         run: |
           git add cv.pdf
+          if git diff --cached --quiet; then
+            echo "No changes to commit, skipping."
+            exit 0
+          fi
           git commit -m "Automated PDF update on $(date -u +"%Y-%m-%d %H:%M:%S UTC")"
           git push --quiet origin ${{ github.ref_name }}
