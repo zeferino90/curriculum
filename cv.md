@@ -28,6 +28,20 @@ Results-driven Senior Backend Developer with 10+ years of experience in designin
 
 ## **Professional Experience**  
 
+### **Flanks | Barcelona, Spain**  
+**Senior Software Engineer** | Aug 2025 - Present  
+- Designed and delivered a **multi-phase data migration from MongoDB to PostgreSQL** for a core financial data service, including dual-write pipelines, backfill tooling with failure recovery, and a progressive environment rollout.  
+- Built a **deferred-operation buffering layer** for the aggregation pipeline, enabling async and context-isolated batch processing at scale.  
+- Extended a **financial reconciliation engine** with new actions, performance fixes, and a phased production rollout across multiple client environments.  
+- Contributed **full-stack features** across Python (FastAPI) and Vue/Nuxt, including internal tooling UIs and REST API endpoints.  
+
+### **Singular Aircraft | Cornellà de Llobregat, Spain**  
+**Senior Backend Engineer** | May 2025 - Aug 2025  
+- Designed and implemented a **ROS2-based alarm system from scratch**, delivering a functional system with multiple alarms ahead of the end-of-July deadline.  
+- Joined the team as a **Python specialist**, introducing modern tooling including **uv, ruff, and mypy** to improve code quality and developer experience.  
+- Improved the **ROS2 development workflow** by adopting **Dev Containers**, standardizing the development environment across the team.  
+- Mentored and supported team members in adopting new tools and practices, **accelerating the team's onboarding** to modern Python and ROS2 workflows.  
+
 ### **ProtoPixel | Barcelona, Spain**  
 **Senior Software Engineer** | Aug 2021 - Oct 2024  
 - Designed and developed a **lighting automation platform**, enhancing energy efficiency and user experience.  
