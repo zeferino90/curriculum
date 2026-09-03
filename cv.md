@@ -6,21 +6,21 @@
 ---
 
 ## **Professional Summary**  
-Results-driven Senior Backend Developer with 10+ years of experience in designing, developing, and optimizing backend systems. Expertise in Python, cloud computing, containerization, and IoT solutions. Adept at building scalable and high-performance applications, implementing CI/CD pipelines, and leading cross-functional teams to drive efficiency and automation. Passionate about leveraging technology for sustainable and intelligent solutions. Strong leadership in mentoring junior developers and fostering knowledge-sharing environments.
+Results-driven Senior Backend Developer with 10+ years of experience designing, developing, and optimizing backend systems. Expertise in Python, financial data pipelines, cloud computing, containerization, and IoT solutions. Adept at building scalable, high-performance data platforms, owning complex migrations end-to-end, and leading cross-functional teams to drive efficiency and automation. Strong leadership in mentoring junior developers and fostering knowledge-sharing environments.
 
 ---
 
 ## Core Skills & Technologies
 - **Backend Development:** Python (Primary), SQL, Django, Flask, FastAPI  
-- **Error Tracking & Debugging:** Sentry  
-- **Cloud & Infrastructure:** AWS (S3, EC2, RDS, Elastic Beanstalk), DigitalOcean, Docker, Docker Compose, Docker Swarm  
-- **CI/CD & DevOps:** Git, Bitbucket pipelines, Jenkins, Bazel, Proxmox  
+- **Frontend Development:** Vue, Nuxt, TypeScript  
+- **Cloud & Infrastructure:** GCP (Cloud SQL, Cloud Logging, Kubernetes), AWS (S3, EC2, RDS, Elastic Beanstalk), DigitalOcean, Docker, Docker Compose, Docker Swarm  
+- **CI/CD & DevOps:** Git, GitHub Actions, Bitbucket pipelines, Jenkins, Bazel, Proxmox  
 - **IoT & Communication Protocols:** MQTT, WebSockets, REST APIs, Edge Computing  
 - **Agile & Project Management:** Scrum, Kanban, JIRA  
-- **Databases:** PostgreSQL, MySQL, SQLite, ORMs (SQLAlchemy, Django ORM), MongoDB, Redis  
+- **Databases:** PostgreSQL, MySQL, SQLite, ORMs (SQLAlchemy, Django ORM), Alembic migrations, MongoDB, Redis  
 - **Testing & Quality Assurance:** Unit Testing, Integration Testing, Test Automation  
 - **System Administration:** Linux, Windows Server, Networking  
-- **Software Observability:** Prometheus, Grafana, OpenTelemetry  
+- **Software Observability:** Prometheus, Grafana, OpenTelemetry, Honeycomb, Sentry  
 - **Messaging & Event Systems:** RabbitMQ, Kafka  
 - **Profiling & Concurrency:** Profiling in Python, asyncio, multithreading 
 
@@ -31,9 +31,13 @@ Results-driven Senior Backend Developer with 10+ years of experience in designin
 ### **Flanks | Barcelona, Spain**  
 **Senior Software Engineer** | Aug 2025 - Present  
 - Designed and delivered a **multi-phase data migration from MongoDB to PostgreSQL** for a core financial data service, including dual-write pipelines, backfill tooling with failure recovery, and a progressive environment rollout.  
+- Built an **AI-assisted classification pipeline** for financial products and transactions, combining model-inferred labels with human-review gating, security-master normalization, and platform-wide backfills.  
+- Designed and rolled out a **transaction reconciliation and matching engine**, adding business-day matching, aging states, manual one-to-many matching, and a phased rollout across multiple client environments.  
 - Built a **deferred-operation buffering layer** for the aggregation pipeline, enabling async and context-isolated batch processing at scale.  
-- Extended a **financial reconciliation engine** with new actions, performance fixes, and a phased production rollout across multiple client environments.  
-- Contributed **full-stack features** across Python (FastAPI) and Vue/Nuxt, including internal tooling UIs and REST API endpoints.  
+- Diagnosed and fixed **production performance and reliability issues** at scale: database deadlocks, connection-pool exhaustion, unbatched writes, and unpaginated queries over large datasets.  
+- Instrumented critical data pipelines with **OpenTelemetry tracing** and introduced a structured error hierarchy with automated alert routing, cutting time to diagnose production incidents.  
+- Led an **architectural refactor towards the repository pattern**, consolidating data access behind explicit repositories and async SQLAlchemy/Alembic migrations.  
+- Delivered **full-stack features** across Python (FastAPI) and Vue/Nuxt, including internal operations tooling UIs and REST API endpoints.  
 
 ### **Singular Aircraft | Cornellà de Llobregat, Spain**  
 **Senior Backend Engineer** | May 2025 - Aug 2025  
